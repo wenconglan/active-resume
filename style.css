@@ -1,25 +1,47 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-*{
+* {
   box-sizing: border-box;
 }
-ul,ol,li{
+ul,
+ol,
+li {
   list-style: none;
 }
-.token.selector,.token.property,.token.function,.token.comment{
-  color:black;
+.token.selector,
+.token.property,
+.token.function,
+.token.comment {
+  color: black;
 }
-#styleCode,#resumeScreen{
+#styleCode,
+#resumeScreen {
   height: 90vh;
-  width:49vw;
+  width: 49vw;
 }
-#paper>pre{
-  padding:16px;
+#paper > pre {
+  padding: 16px;
 }
-#resumeScreen{
-  overflow:auto;
+#resumeScreen {
+  overflow: auto;
   transform: translate3d(0px, 0px, -56.5px) rotateX(0deg) rotateY(-10deg);
   padding: 45px;
+}
+.actions {
+  position: fixed;
+  top: 90vh;
+  right: 41%;
+}
+.actions > button {
+  margin: 10px;
+  background: #ddd;
+  padding: 8px 10px;
+}
+.actions > button.active {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+}
+.actions > button:focus {
+  outline: none;
 }

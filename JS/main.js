@@ -1,4 +1,5 @@
-let result = `/* 
+!function(){
+  let result = `/* 
 大家好，我是文聪
 下面
 我将以动画的形式来介绍我自己
@@ -117,11 +118,24 @@ writeCode('', result, () => {
     })
   })
 })
-/*() => {
-    writeCode(result, result2,()=>{
-      writeMarkdown(md,()=>{})
-    })
-  }*/
+var showSpeed = 50
+$('.actions').on('click','button',function(e){
+  let $button = $(e.currentTarget)
+  let speed = $button.attr('data-speed')
+  $button.addClass('active')
+    .siblings('.active').removeClass('active')
+    switch(speed){
+      case 'slow':
+      showSpeed = 100
+      break;
+      case 'normal':
+      showSpeed = 50
+      break
+      case 'fast':
+      showSpeed = 10
+      break
+    }
+})
 
 function createPaper(fn) {
   let resumeScreen = document.createElement('div')
@@ -136,7 +150,6 @@ function createPaper(fn) {
 function writeMarkdown(markdown,fn1){
   let domPaper = document.querySelector('#resumeScreen>.content')
   let n = 0
-  let showSpeed = 100
   let timerId = setTimeout(function fn() {
     n += 1
     domPaper.innerHTML = markdown.substring(0, n)
@@ -144,7 +157,7 @@ function writeMarkdown(markdown,fn1){
     if (n < markdown.length) {
       timerId = setTimeout(fn, showSpeed)
     } else {
-      fn1.call()
+      fn1 && fn1.call()
     }
   }, showSpeed)
 }
@@ -160,22 +173,17 @@ function writeCode(prefix, code, fn1) {
   domCode.innerHTML = prefix || ''
   let domStyle = document.querySelector('#styleTag')
   let n = 0
-  let showSpeed = 100
   let timerId = setTimeout(function fn() {
     n += 1
-    domCode.innerHTML = Prism.highlight(prefix + code.substring(0, n),Prism.languages.css
-    
-    
-    )
+    domCode.innerHTML = Prism.highlight(prefix + code.substring(0, n),Prism.languages.css )
     domCode.scrollTop = domCode.scrollHeight
     domStyle.innerHTML = prefix + code.substring(0, n)
     if (n < code.length) {
       timerId = setTimeout(fn, showSpeed)
     } else {
-      fn1.call()
+      fn1 && fn1.call()
     }
   }, showSpeed)
 }
-
-
+}.call()
 
