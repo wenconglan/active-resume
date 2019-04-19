@@ -26,13 +26,13 @@ li {
 }
 #resumeScreen {
   overflow: auto;
-  transform: translate3d(0px, 0px, -56.5px) rotateX(0deg) rotateY(-10deg);
+  transform: translate3d(0px, 0px, -90.5px) rotateX(0deg) rotateY(-10deg);
   padding: 45px;
 }
 .actions {
   position: fixed;
   top: 90vh;
-  right: 41%;
+  right: 44%;
 }
 .actions > button {
   margin: 10px;

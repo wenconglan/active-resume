@@ -51,7 +51,7 @@ html{
 }
 #styleCode{
   position:fixed;left:0;top:0;
-  transform: translate3d(0px, 0px, -56.5px) rotateX(0deg) rotateY(10deg);
+  transform: translate3d(0px, 0px, -90.5px) rotateX(0deg) rotateY(10deg);
 }
 
 /*好了，不玩了，直接在右侧建立一个简历显示屏吧*/
